@@ -9,17 +9,16 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 3000);
+    }, 5000);
     return () => clearTimeout(timer);
   });
 
   return (
     <div>
-      {loading ? 
-        "Loading..."
-      :
-        <Nav />
-      }
+      <span className={loading ? "loading" : "loading loading--stop"}>
+        Loading...
+      </span>
+      <Nav />
     </div>
   );
 }

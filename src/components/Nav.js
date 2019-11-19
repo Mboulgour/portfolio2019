@@ -8,14 +8,14 @@ const Nav = () => {
   return(
     <nav className="navbar">
       <div className="navbar__title">
-        Mathieu <span>Rios</span>
+        <span className="navbar__title--firstname">Mathieu</span><span className="navbar__title--lastname">Rios</span>
       </div>
 
       {/*  Desktop menu */}
       <ol className="navbar__list">
-        <li className="navbar__item">Item 1</li>
-        <li className="navbar__item">Item 2</li>
-        <li className="navbar__item">Item 3</li>
+        <li className="navbar__item">About</li>
+        <li className="navbar__item">Portfolio</li>
+        <li className="navbar__item">Contact</li>
       </ol>
 
       {/* Hamburger Menu */}

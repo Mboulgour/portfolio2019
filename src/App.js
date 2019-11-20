@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import Nav from './components/Nav';
+import About from './components/About';
+import Portfolio from './components/Portfolio'
 
 function App() {
 
@@ -9,9 +11,9 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
-    }, 5000);
+    }, 1000);
     return () => clearTimeout(timer);
-  });
+  }); // Set it to 5000 when dev is DONE
 
   return (
     <div>
@@ -19,6 +21,8 @@ function App() {
         Loading...
       </span>
       <Nav />
+      <About />
+      <Portfolio />
     </div>
   );
 }

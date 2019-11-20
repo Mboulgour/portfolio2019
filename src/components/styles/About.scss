@@ -1,0 +1,102 @@
+@mixin flexBox($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+};
+
+$main-color: #1a1aff;
+
+.about__container{
+  @include flexBox(column, flex-start, flex-start);
+  height: calc(100vh - 100px);
+  width: 100%;
+  padding: 100px 50px 0 50px;
+  color: black;
+  &::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 200px solid#1a1aff;
+    border-left: 100vw solid transparent;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.about__title{
+  @include flexBox(row, flex-start, center);
+  flex-wrap: wrap;
+  padding: 130px 5px 5px 5px;
+  font-size: 7em;
+  span.about__name{
+    color: white;
+    background: $main-color;
+    padding: 15px 15px 0 15px;
+    margin-left: 25px;
+    font-weight: bold;
+    align-self: end;
+  }
+}
+
+@media screen and (max-width: 1405px) { 
+  .about__title{
+    font-size: 6em;
+  }
+} 
+
+@media screen and (max-width: 1225px) { 
+  .about__title{
+    font-size: 5.5em;
+  }
+} 
+
+@media screen and (max-width: 1035px) { 
+  .about__title{
+    font-size: 4.5em;
+  }
+}
+
+@media screen and (max-width: 839px) { 
+  .about__container{
+    padding: 100px 50px 0 15px;
+  }
+
+  .about__title{
+    font-size: 3.5em;
+  }
+} 
+
+@media screen and (max-width: 665px) { 
+  .about__title{
+    span.about__name{
+      margin-left: 0;
+      padding: 0;
+      background: none;
+      color: $main-color;
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 585px) { 
+  .about__title{
+    span.about__name{
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 585px) { 
+  .about__title{
+    padding-top: 35px;
+  }
+
+  .about__container{
+    &::after{
+      border-bottom: 100px solid#1a1aff;
+    }
+  }
+}

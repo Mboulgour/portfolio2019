@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import Nav from './components/Nav';
 import About from './components/About';
-import Portfolio from './components/Portfolio'
 
 function App() {
 
@@ -22,7 +21,6 @@ function App() {
       </span>
       <Nav />
       <About />
-      <Portfolio />
     </div>
   );
 }

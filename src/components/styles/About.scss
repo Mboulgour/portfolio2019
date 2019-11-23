@@ -22,7 +22,7 @@ $main-color: #1a1aff;
     position: absolute;
     height: 0;
     width: 0;
-    border-bottom: 200px solid#1a1aff;
+    border-bottom: 200px solid $main-color;
     border-left: 100vw solid transparent;
     bottom: 0;
     right: 0;

@@ -109,6 +109,13 @@ $main-color: #1a1aff;
       opacity: 1;
     }
   }
+  &.active{
+    color: white;
+    &::after{
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+  }
 }
 
 //  BURGER MENU 

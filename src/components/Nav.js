@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles/Nav.scss';
 
 const Nav = () => {
   const [burgerActive, setBurgerActive] = useState(false);
+  const [scroll, setScroll] = useState(0)
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const scrollCheck = window.scrollY
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck)
+      }
+    })
+  })
 
   return(
     <nav className="navbar">
@@ -14,9 +24,9 @@ const Nav = () => {
 
       {/*  Desktop menu */}
       <ol className="navbar__list">
-        <li className="navbar__item">About</li>
-        <li className="navbar__item">Portfolio</li>
-        <li className="navbar__item">Contact</li>
+        <li className={ scroll >= 0 && scroll < 875 ? "navbar__item active" : "navbar__item"}>About</li>
+        <li className={ scroll >= 1750 && scroll < 2625 ? "navbar__item active" : "navbar__item"}>Portfolio</li>
+        <li className={ scroll >= 2625 ? "navbar__item active" : "navbar__item"}>Contact</li>
       </ol>
 
       {/* Hamburger Menu */}

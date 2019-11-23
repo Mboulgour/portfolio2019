@@ -8,8 +8,8 @@ const Nav = () => {
   return(
     <nav className="navbar">
       <div className="navbar__title">
-        <span className="navbar__title--firstname">Mathieu</span>
-        <span className="navbar__title--lastname">Rios</span>
+        <span className="navbar__title--firstname">M</span>
+        <span className="navbar__title--lastname">R</span>
       </div>
 
       {/*  Desktop menu */}
@@ -34,7 +34,7 @@ const Nav = () => {
         </div> 
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Nav;

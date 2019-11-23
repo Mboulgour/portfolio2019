@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
 body{
   font-family: "Fira Sans", sans-serif;
+  width: 100vw;
   overflow-x: hidden;
 }
 
 *{
   margin: 0;
+  box-sizing: border-box;
 }
 
 li{
   list-style-type: none;
+}
+
+b{
+  margin: 0 25px;
 }
 
 .loading{
@@ -30,6 +37,45 @@ li{
  z-index: 3;
 }
 
+.loading span {
+  display: block;
+  height: 80px;
+  width: 80px;
+  background: transparent;
+  padding: 15px;
+  border: 2px solid white;
+  border-radius: 100%;
+  position: relative;
+  animation: rotate 3.5s linear infinite;
+}
+
+.loading span::before{
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border-radius: 100%;
+  top: -10px;
+  left: 40%
+}
+
+.loading span::after{
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border-radius: 100%;
+  bottom: -10px;
+  left: 40%;
+}
+
 .loading.loading--stop{
   transform: translateY(-100%);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0); }
+  to   { transform: rotate(360deg); }
 }

@@ -1,0 +1,194 @@
+@mixin flexBox($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+};
+
+$main-color: #1a1aff;
+
+//  FIRST SECTION
+
+.about__container{
+  @include flexBox(column, flex-start, flex-start);
+  height: 100vh;
+  width: 100vw;
+  padding: 100px 50px 0 50px;
+  color: black;
+  position: relative;
+  &::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 200px solid#1a1aff;
+    border-left: 100vw solid transparent;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.about__title{
+  @include flexBox(row, flex-start, center);
+  flex-wrap: wrap;
+  padding: 130px 5px 5px 5px;
+  font-size: 7em;
+  span.about__name{
+    color: white;
+    background: $main-color;
+    padding: 15px 15px 0 15px;
+    margin-left: 25px;
+    font-weight: bold;
+    align-self: end;
+  }
+}
+
+.about__description{
+  font-size: 3em;
+  color: #777777;
+  padding: 15px 15px 0 10px;
+}
+
+// SECOND SECTION
+
+.about__container--second{
+  @include flexBox(column, flex-start, flex-start);
+  height: 100vh;
+  width: 100vw;
+  padding: 100px 50px 0 50px;
+  background: $main-color;
+  color: white;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 200px solid white;
+    border-left: 100vw solid transparent;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.about__title--second{
+  @include flexBox(row, flex-end, center);
+  flex-wrap: wrap;
+  padding: 25px 5px 5px 5px;
+  font-size: 7em;
+  text-align: right;
+  span.about__name--second{
+    color: $main-color;
+    background: white;
+    padding: 15px 15px 0 15px;
+    margin-left: 25px;
+    font-weight: bold;
+    align-self: end;
+  }
+}
+
+.about__description--second{
+  width: 100%;
+  text-align: right;
+  font-size: 3em;
+  color: white;
+  padding: 15px 15px 0 10px;
+}
+
+@media screen and (max-width: 1405px) { 
+  .about__title, .about__title--second{
+    font-size: 6em;
+  }
+} 
+
+@media screen and (max-width: 1225px) { 
+  .about__title, .about__title--second{
+    font-size: 5.5em;
+  }
+} 
+
+@media screen and (max-width: 1035px) { 
+  .about__title, .about__title--second{
+    font-size: 4.5em;
+  }
+}
+
+@media screen and (max-width: 870px) { 
+  .about__container{
+    padding: 100px 50px 0 15px;
+  }
+
+  .about__description, .about__description--second{
+    font-size: 2em;
+  }
+
+  .about__title, .about__title--second{
+    font-size: 3.5em;
+  }
+} 
+
+@media screen and (max-width: 710px) { 
+  .about__title{
+    padding: 0;
+    span.about__name{
+      margin-left: 0;
+      padding: 0;
+      background: none;
+      color: $main-color;
+      font-weight: bold;
+    }
+  }
+
+  .about__title--second{
+    padding: 0;
+    span.about__name--second{
+      margin-left: 0;
+      padding: 0;
+      background: none;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  .about__description, .about__description--second{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 585px) { 
+  .about__title{
+    padding-top: 35px;
+  }
+
+  .about__container{
+    &::after{
+      border-bottom: 100px solid#1a1aff;
+    }
+  }
+
+  .about__container--second{
+    &::after{
+      border-bottom: 100px solid white;
+    }
+  }
+
+  .about__description, .about__description--second{
+    padding: 15px 0;
+  }
+}
+
+@media screen and (max-width: 400px) { 
+  .about__container--second{
+    padding: 60px 50px 0 50px;
+  }
+  
+  .about__title{
+    font-size: 3em;
+    padding-top: 0;
+  }
+
+  .about__title--second{
+    font-size: 3em;
+  }
+}

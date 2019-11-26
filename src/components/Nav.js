@@ -25,7 +25,7 @@ const Nav = () => {
       {/*  Desktop menu */}
       <ol className="navbar__list">
         <li className={ scroll >= 0 && scroll < 875 ? "navbar__item active" : "navbar__item"}>About</li>
-        <li className={ scroll >= 1750 && scroll < 2625 ? "navbar__item active" : "navbar__item"}>Portfolio</li>
+        <li className={ scroll >= 1750 && scroll < 2625 ? "navbar__item active" : "navbar__item"}><a href="#projects">Portfolio</a></li>
         <li className={ scroll >= 2625 ? "navbar__item active" : "navbar__item"}>Contact</li>
       </ol>
 

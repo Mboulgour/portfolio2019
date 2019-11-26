@@ -1,8 +1,48 @@
+@mixin flexBox($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+};
+
+$main-color: #396afc;
+
 .Portfolio__container{
   height: 100vh;
   padding-top: 100px;
   background: white;
   color: #396afc;
-  position: relative;
-  padding: 100px;
+  padding: 180px 100px;
+}
+
+.Portfolio__article{
+  @include flexBox(row, flex-start, flex-start);
+  border: 10px solid $main-color;
+}
+
+.Portfolio__title{
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+  top: -80px;
+}
+
+.Portfolio__img_container{
+  background: $main-color;
+  width: 50%;
+  height: 100%;
+  img{
+    width: 100%;
+    object-fit: cover;
+    padding: 30px 40px 30px 30px;
+    z-index: 1;
+    filter: grayscale(100%);
+  }
+}
+
+.Portfolio__description{
+  width: 50%;
 }

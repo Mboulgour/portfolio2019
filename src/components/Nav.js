@@ -17,14 +17,13 @@ const Nav = () => {
 
   return(
     <nav className="navbar">
-      <div className="navbar__title">
+      <a href="#about" className="navbar__title">
         <span className="navbar__title--firstname">M</span>
         <span className="navbar__title--lastname">R</span>
-      </div>
-
+      </a>
       {/*  Desktop menu */}
       <ol className="navbar__list">
-        <li className={ scroll >= 0 && scroll < 875 ? "navbar__item active" : "navbar__item"}>About</li>
+        <li className={ scroll >= 0 && scroll < 875 ? "navbar__item active" : "navbar__item"}><a href="#about">About</a></li>
         <li className={ scroll >= 1750 && scroll < 2625 ? "navbar__item active" : "navbar__item"}><a href="#projects">Portfolio</a></li>
         <li className={ scroll >= 2625 ? "navbar__item active" : "navbar__item"}>Contact</li>
       </ol>
@@ -38,9 +37,9 @@ const Nav = () => {
           <span className="bars"></span>
         </div>
         <div className={burgerActive ? "burger__items active" : "burger__items"}>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Contact</li>
         </div> 
       </div>
     </nav>

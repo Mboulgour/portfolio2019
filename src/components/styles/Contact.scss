@@ -1,0 +1,19 @@
+@mixin flexBox($direction, $justify, $align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+};
+
+$main-color: #396afc;
+
+.Contact__container{
+  padding-top: 100px;
+  background: white;
+  color: $main-color;
+  padding: 50px 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+

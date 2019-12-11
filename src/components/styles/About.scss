@@ -157,17 +157,16 @@ $main-color: #396afc;
 }
 
 @media screen and (max-width: 585px) { 
-  .about__title{
-    padding-top: 35px;
-  }
 
   .about__container{
+    height: 80vh;
     &::after{
-      border-bottom: 100px solid#1a1aff;
+      border-bottom: 100px solid $main-color;
     }
   }
 
   .about__container--second{
+    height: 80vh;
     &::after{
       border-bottom: 100px solid white;
     }
@@ -184,12 +183,12 @@ $main-color: #396afc;
   }
   
   .about__title {
-    font-size: 4em;
+    font-size: 3em;
     padding-top: 35px;
   }
 
   .about__title--second{
-    font-size: 4em;
+    font-size: 3em;
     padding-top: 0;
   }
 }
